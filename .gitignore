@@ -1,0 +1,28 @@
+# Build results
+bin/
+obj/
+out/
+
+# Rider / Visual Studio
+.idea/
+.vs/
+*.user
+*.suo
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Dependencies
+packages/
+node_modules/
+
+# EF Core
+Migrations/
+
+# Secrets
+appsettings.Development.json
+.env

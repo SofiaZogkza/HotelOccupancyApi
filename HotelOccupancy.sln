@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelOccupancy.Application", "HotelOccupancy.Application\HotelOccupancy.Application.csproj", "{26BF9DD3-8963-4B7D-A4AD-07E2577531FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelOccupancy.Domain.Models", "HotelOccupancy.Domain.Models\HotelOccupancy.Domain.Models.csproj", "{49D75E12-AE1F-4BF6-AF49-D6787FA64A03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelOccupancy.Infrastructure", "HotelOccupancy.Infrastructure\HotelOccupancy.Infrastructure.csproj", "{5079F702-5DAB-43F1-85F4-934CB03CB8FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelOccupancy.Persistence", "HotelOccupancy.Persistence\HotelOccupancy.Persistence.csproj", "{BDC3F8F3-7A5E-4719-910C-FA2FE21718E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelOccupancy.Tests", "HotelOccupancy.Tests\HotelOccupancy.Tests.csproj", "{14DB5E96-7121-43E9-99D3-062DD74E53F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelOccupancy.Api", "HotelOccupancy.Api\HotelOccupancy.Api.csproj", "{FD93F47A-D7FA-41C3-BFFA-7D7CF1E942A2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{26BF9DD3-8963-4B7D-A4AD-07E2577531FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26BF9DD3-8963-4B7D-A4AD-07E2577531FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26BF9DD3-8963-4B7D-A4AD-07E2577531FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26BF9DD3-8963-4B7D-A4AD-07E2577531FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49D75E12-AE1F-4BF6-AF49-D6787FA64A03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49D75E12-AE1F-4BF6-AF49-D6787FA64A03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49D75E12-AE1F-4BF6-AF49-D6787FA64A03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49D75E12-AE1F-4BF6-AF49-D6787FA64A03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5079F702-5DAB-43F1-85F4-934CB03CB8FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5079F702-5DAB-43F1-85F4-934CB03CB8FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5079F702-5DAB-43F1-85F4-934CB03CB8FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5079F702-5DAB-43F1-85F4-934CB03CB8FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDC3F8F3-7A5E-4719-910C-FA2FE21718E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDC3F8F3-7A5E-4719-910C-FA2FE21718E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDC3F8F3-7A5E-4719-910C-FA2FE21718E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDC3F8F3-7A5E-4719-910C-FA2FE21718E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14DB5E96-7121-43E9-99D3-062DD74E53F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14DB5E96-7121-43E9-99D3-062DD74E53F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14DB5E96-7121-43E9-99D3-062DD74E53F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14DB5E96-7121-43E9-99D3-062DD74E53F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD93F47A-D7FA-41C3-BFFA-7D7CF1E942A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD93F47A-D7FA-41C3-BFFA-7D7CF1E942A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD93F47A-D7FA-41C3-BFFA-7D7CF1E942A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD93F47A-D7FA-41C3-BFFA-7D7CF1E942A2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
