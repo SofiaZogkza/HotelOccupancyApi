@@ -1,6 +1,6 @@
 namespace HotelOccupancy.Application.Services;
 
-public class RoomService
+public class RoomService : IRoomService
 {
     
 }

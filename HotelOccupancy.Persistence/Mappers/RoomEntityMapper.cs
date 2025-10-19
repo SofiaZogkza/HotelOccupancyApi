@@ -3,7 +3,7 @@ using HotelOccupancy.Persistence.Entities;
 
 namespace HotelOccupancy.Persistence.Mappers;
 
-public static class RoomMapper
+public static class RoomEntityMapper
 {
     public static RoomEntity ToEntity(Room room)
     {

@@ -23,3 +23,35 @@ A clean architecture .NET API for managing hotels, travellers, rooms, and travel
 3. Update `appsettings.json` connection string
 4. Apply EF Core migrations: `dotnet ef database update`
 
+### Ensure you have .NET 8 SDK installed:
+
+`dotnet --version`
+
+
+### Install EF Core CLI globally (if not installed):
+
+`dotnet tool install --global dotnet-ef`
+
+
+### Restore required NuGet packages:
+
+`dotnet restore`
+
+### Environment Variables
+
+The project uses a `.env` file at the solution root for DB configuration.
+You may find the .env.example with empty sample. Remove the .example extension and fill in the empty variables.
+Note: The design-time DbContext factory loads this .env file for migrations.
+
+### Database Migrations
+
+Create migrations:
+
+`cd HotelOccupancy.Persistence
+dotnet ef migrations add InitialCreated`
+
+Apply migrations to the database:
+
+`dotnet ef database update`
+
+

@@ -1,7 +1,36 @@
+using HotelOccupancy.Application;
+using HotelOccupancy.Application.Services;
+using HotelOccupancy.Persistence.Data;
+using HotelOccupancy.Persistence.Repositories;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+var connectionString =
+    $"Host={Environment.GetEnvironmentVariable("POSTGRES_HOST")};" +
+    $"Port={Environment.GetEnvironmentVariable("POSTGRES_PORT")};" +
+    $"Database={Environment.GetEnvironmentVariable("POSTGRES_DB")};" +
+    $"Username={Environment.GetEnvironmentVariable("POSTGRES_USER")};" +
+    $"Password={Environment.GetEnvironmentVariable("POSTGRES_PASSWORD")}";
+
+builder.Services.AddDbContext<HotelOccupancyDbContext>(options =>
+     options.UseNpgsql(connectionString));
+
+// Register your services
+builder.Services.AddScoped<IHotelService, HotelService>();
+builder.Services.AddScoped<IRoomService, RoomService>();
+builder.Services.AddScoped<IRoomRepository, RoomRepository>();
+builder.Services.AddScoped<ITravelGroupService, TravelGroupService>();
+builder.Services.AddScoped<ITravelGroupRepository, TravelGroupRepository>();
+builder.Services.AddScoped<ITravellerService, TravellerService>();
+builder.Services.AddScoped<ITravellerRepository, TravellerRepository>();
+
+// OpenAPI/Swagger configuration
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -15,30 +44,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-    {
-        var forecast = Enumerable.Range(1, 5).Select(index =>
-                new WeatherForecast
-                (
-                    DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                    Random.Shared.Next(-20, 55),
-                    summaries[Random.Shared.Next(summaries.Length)]
-                ))
-            .ToArray();
-        return forecast;
-    })
-    .WithName("GetWeatherForecast")
-    .WithOpenApi();
+app.MapControllers();
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

@@ -1,6 +1,6 @@
 namespace HotelOccupancy.Application.Services;
 
-public class TravelGroupService
+public class TravelGroupService : ITravelGroupService
 {
     
 }
