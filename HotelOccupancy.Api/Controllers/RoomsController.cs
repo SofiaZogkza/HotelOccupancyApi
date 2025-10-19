@@ -1,7 +1,5 @@
 using HotelOccupancy.Api.Contracts;
 using HotelOccupancy.Application;
-using HotelOccupancy.Application.Mappers;
-using HotelOccupancy.Domain.Models;
 using HotelOccupancy.Domain.Models.DTOs;
 using HotelOccupancy.Domain.Models.Errors;
 using Microsoft.AspNetCore.Mvc;
@@ -84,23 +82,44 @@ public class RoomsController : ControllerBase
         return Ok(result.Data);
     }
     
-    [HttpGet("by-code/{code}")]
+    [HttpGet("by-code")]
     [ProducesResponseType(typeof(RoomOccupancyResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> GetRoomOccupancyByCode(string code)
+    public async Task<IActionResult> GetRoomOccupancyByCode([FromQuery] RoomSearchRequest request)
     {
-        if (string.IsNullOrWhiteSpace(code))
+        if (string.IsNullOrWhiteSpace(request.RoomCode))
         {
             return BadRequest(new ErrorResponse { Code = ErrorCodes.InvalidRequest, Message = ErrorMessages.ValueEmpty });
         }
 
-        var result = await _roomService.GetRoomByCodeAsync(code);
+        var result = await _roomService.GetRoomByCodeAsync(request);
 
         if (!result.IsSuccess)
             return NotFound(new { result.ErrorCode, result.ErrorMessage });
 
         return Ok(result.Data);
     }
+    
+    [HttpGet("by-travel-group")]
+    [ProducesResponseType(typeof(List<RoomOccupancyResponse>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status400BadRequest)]
+    public async Task<IActionResult> GetRoomsByTravelGroup([FromQuery] RoomsByTravelGroupRequest request)
+    {
+        if (string.IsNullOrWhiteSpace(request.GroupId))
+        {
+            return BadRequest(new ErrorResponse { Code = ErrorCodes.InvalidRequest, Message = "TravelGroupId cannot be empty." });
+        }
+
+        var result = await _roomService.GetRoomsByTravelGroupAsync(request.GroupId);
+
+        if (!result.IsSuccess)
+        {
+            return BadRequest(new { result.ErrorCode, result.ErrorMessage });
+        }
+
+        return Ok(result.Data);
+    }
+
     
     [HttpPost("assign")]
     [ProducesResponseType(typeof(RoomOccupancyResponse), StatusCodes.Status201Created)]
@@ -134,7 +153,7 @@ public class RoomsController : ControllerBase
             return BadRequest(new { response.ErrorCode, response.ErrorMessage });
 
         }
-        return Ok(response);
+        return Ok(response.Data);
     }
 
     public static bool IsValidGuid(string value, out Guid guid) =>

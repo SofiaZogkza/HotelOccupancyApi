@@ -14,7 +14,7 @@ public class TravellerEntityMapper
             LastName = traveller.LastName,
             DateOfBirth = traveller.DateOfBirth,
             TravelGroupId = traveller.TravelGroupId,
-               TravelGroup = traveller.TravelGroup != null
+            TravelGroup = traveller.TravelGroup != null
                 ? new TravelGroupEntity
                 {
                     GroupId = traveller.TravelGroup.GroupId,
@@ -36,6 +36,7 @@ public class TravellerEntityMapper
             TravelGroup = entity.TravelGroup != null
                 ? new TravelGroup
                 {
+                    Id = entity.TravelGroup.Id,
                     GroupId = entity.TravelGroup.GroupId,
                     ArrivalDate = entity.TravelGroup.ArrivalDate
                 }

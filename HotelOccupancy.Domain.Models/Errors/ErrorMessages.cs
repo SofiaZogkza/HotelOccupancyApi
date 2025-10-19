@@ -7,4 +7,5 @@ public static class ErrorMessages
     public const string NotFound = "Not Found";
     public const string RoomNotFound = "Room not found";
     public const string ValueEmpty = "This value must be provided";
+    public const string RoomFull = "Cannot move traveller: target room is full.";
 }

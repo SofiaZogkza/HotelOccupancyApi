@@ -1,6 +1,9 @@
 using DotNetEnv;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using HotelOccupancy.Application;
 using HotelOccupancy.Application.Services;
+using HotelOccupancy.Application.Validators;
 using HotelOccupancy.Persistence.Data;
 using HotelOccupancy.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +14,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
+
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddValidatorsFromAssemblyContaining<RoomSearchRequestValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<RoomsByTravelGroupRequestValidator>();
 
 var connectionString =
     $"Host={Environment.GetEnvironmentVariable("POSTGRES_HOST")};" +
