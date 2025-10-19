@@ -13,7 +13,14 @@ public class TravellerEntityMapper
             FirstName = traveller.FirstName,
             LastName = traveller.LastName,
             DateOfBirth = traveller.DateOfBirth,
-            TravelGroupId = traveller.TravelGroupId
+            TravelGroupId = traveller.TravelGroupId,
+               TravelGroup = traveller.TravelGroup != null
+                ? new TravelGroupEntity
+                {
+                    GroupId = traveller.TravelGroup.GroupId,
+                    ArrivalDate = traveller.TravelGroup.ArrivalDate
+                }
+                : null
         };
     }
 
@@ -25,7 +32,14 @@ public class TravellerEntityMapper
             FirstName = entity.FirstName,
             LastName = entity.LastName,
             DateOfBirth = entity.DateOfBirth,
-            TravelGroupId = entity.TravelGroupId
+            TravelGroupId = entity.TravelGroupId,
+            TravelGroup = entity.TravelGroup != null
+                ? new TravelGroup
+                {
+                    GroupId = entity.TravelGroup.GroupId,
+                    ArrivalDate = entity.TravelGroup.ArrivalDate
+                }
+                : null
         };
     }
 }
