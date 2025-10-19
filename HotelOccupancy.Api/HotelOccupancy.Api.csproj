@@ -13,10 +13,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Contracts\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\HotelOccupancy.Application\HotelOccupancy.Application.csproj" />
       <ProjectReference Include="..\HotelOccupancy.Persistence\HotelOccupancy.Persistence.csproj" />
     </ItemGroup>

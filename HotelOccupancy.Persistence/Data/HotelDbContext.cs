@@ -18,29 +18,34 @@ public class HotelOccupancyDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-        
-        modelBuilder.Entity<RoomEntity>() // public class RoomEntityConfiguration : IEntityTypeConfiguration<RoomEntity>
+    
+        modelBuilder.Entity<RoomEntity>()
             .HasKey(r => r.Id);
 
         modelBuilder.Entity<RoomEntity>()
             .HasMany(r => r.AssignedTravellers)
             .WithOne(t => t.Room)
             .HasForeignKey(t => t.RoomId)
-            .OnDelete(DeleteBehavior.Restrict);
+            .OnDelete(DeleteBehavior.SetNull);
 
         modelBuilder.Entity<TravellerEntity>()
             .HasKey(t => t.Id);
 
+        modelBuilder.Entity<TravellerEntity>()
+            .Property(t => t.RoomId)
+            .IsRequired(false);
+
+        // Traveller -> TravelGroup relationship
+        modelBuilder.Entity<TravellerEntity>()
+            .HasOne(t => t.TravelGroup)             // navigation property
+            .WithMany(g => g.Travellers)            // navigation property in TravelGroupEntity
+            .HasForeignKey(t => t.TravelGroupId)    // FK in TravellerEntity
+            .HasPrincipalKey(g => g.GroupId)        // PK-like property in TravelGroupEntity
+            .OnDelete(DeleteBehavior.Restrict);
+
         modelBuilder.Entity<TravelGroupEntity>()
             .HasKey(g => g.Id);
 
-        modelBuilder.Entity<TravelGroupEntity>()
-            .HasMany(g => g.Travellers)
-            .WithOne()
-            .HasForeignKey(t => t.TravelGroupId)
-            .HasPrincipalKey(g => g.GroupId)
-            .OnDelete(DeleteBehavior.Restrict);
-        
         modelBuilder.Entity<RoomEntity>()
             .HasIndex(r => r.Code)
             .IsUnique();

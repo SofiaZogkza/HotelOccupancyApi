@@ -1,11 +1,11 @@
-namespace HotelOccupancy.Domain.Models;
+namespace HotelOccupancy.Domain.Models.DTOs;
 
-public class Traveller
+public class TravellerResponse
 {
-    public Guid Id { get; set; }
+    public string Id { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public DateTime DateOfBirth { get; set; }
     public string TravelGroupId { get; set; }
-    public TravelGroup TravelGroup { get; set; } 
+    public DateTime ArrivalDate { get; set; } 
 }

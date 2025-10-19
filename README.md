@@ -54,4 +54,21 @@ Apply migrations to the database:
 
 `dotnet ef database update`
 
+### Seeding Initial Data
+
+After setting up PostgreSQL and applying migrations, you can seed the database with initial rooms, travellers, and travel groups.
+
+1. Make sure your `init_data.sql` is in the `Database/` folder at the solution root.
+
+2. Run the SQL script inside your Docker container:
+
+```bash
+docker exec -i hoteloccupancy_postgres psql -U postgres -d hoteloccupancydb < Database/init_data.sql
+```
+3. Verify the data:
+```bash
+docker exec -i hoteloccupancy_postgres psql -U postgres -d hoteloccupancydb -c "SELECT * FROM \"Rooms\";"
+docker exec -i hoteloccupancy_postgres psql -U postgres -d hoteloccupancydb -c "SELECT * FROM \"Travellers\";"
+docker exec -i hoteloccupancy_postgres psql -U postgres -d hoteloccupancydb -c "SELECT * FROM \"TravelGroups\";"
+```
 

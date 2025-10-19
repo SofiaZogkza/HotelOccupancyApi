@@ -1,15 +1,16 @@
+using DotNetEnv;
 using HotelOccupancy.Application;
 using HotelOccupancy.Application.Services;
 using HotelOccupancy.Persistence.Data;
 using HotelOccupancy.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 
+var envFilePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).FullName, ".env");
+Env.Load(envFilePath);
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
 var connectionString =
     $"Host={Environment.GetEnvironmentVariable("POSTGRES_HOST")};" +

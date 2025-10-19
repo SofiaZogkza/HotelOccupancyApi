@@ -1,0 +1,81 @@
+.
+├── HotelOccupancy.Api
+│   ├── Contracts
+│   │   └── ErrorResponse.cs
+│   ├── Controllers
+│   │   ├── HotelsController.cs
+│   │   ├── RoomsController.cs
+│   │   ├── TravelGroupsController.cs
+│   │   └── TravellersController.cs
+│   ├── HotelOccupancy.Api.csproj
+│   ├── HotelOccupancy.Api.http
+│   ├── Program.cs
+│   ├── Properties
+│   │   └── launchSettings.json
+│   ├── appsettings.Development.json
+│   └── appsettings.json
+├── HotelOccupancy.Application
+│   ├── Common
+│   │   └── Result.cs
+│   ├── HotelOccupancy.Application.csproj
+│   ├── IHotelService.cs
+│   ├── IRoomRepository.cs
+│   ├── IRoomService.cs
+│   ├── ITravelGroupRepository.cs
+│   ├── ITravelGroupService.cs
+│   ├── ITravellerRepository.cs
+│   ├── ITravellerService.cs
+│   ├── Mappers
+│   │   └── ValidationMessages.cs
+│   ├── Services
+│   │   ├── HotelService.cs
+│   │   ├── RoomService.cs
+│   │   ├── TravelGroupService.cs
+│   │   └── TravellerService.cs
+│   └── Validators
+├── HotelOccupancy.Domain.Models
+│   ├── DTOs
+│   │   ├── AssignTravellersToRoomRequest.cs
+│   │   ├── MoveTravellerRequest.cs
+│   │   ├── RoomCreateRequest.cs
+│   │   └── RoomOccupancyResponse.cs
+│   ├── Errors
+│   │   ├── ErrorCodes.cs
+│   │   └── ErrorMessages.cs
+│   ├── HotelOccupancy.Domain.Models.csproj
+│   ├── Room.cs
+│   ├── TravelGroup.cs
+│   └── Traveller.cs
+├── HotelOccupancy.Infrastructure
+│   └── HotelOccupancy.Infrastructure.csproj
+├── HotelOccupancy.Persistence
+│   ├── Data
+│   │   ├── HotelDbContext.cs
+│   │   └── HotelOccupancyDbContextFactory.cs
+│   ├── Entities
+│   │   ├── RoomEntity.cs
+│   │   ├── TravelGroupEntity.cs
+│   │   └── TravellerEntity.cs
+│   ├── HotelOccupancy.Persistence.csproj
+│   ├── Mappers
+│   │   ├── RoomEntityMapper.cs
+│   │   ├── TravelGroupEntityMapper.cs
+│   │   └── TravellerEntityMapper.cs
+│   ├── Migrations
+│   │   ├── 20251019000700_InitialCreated.Designer.cs
+│   │   ├── 20251019000700_InitialCreated.cs
+│   │   └── HotelOccupancyDbContextModelSnapshot.cs
+│   └── Repositories
+│       ├── RoomRepository.cs
+│       ├── TravelGroupRepository.cs
+│       └── TravellerRepository.cs
+├── HotelOccupancy.Tests
+│   ├── HotelOccupancy.Tests.csproj
+│   └── UnitTest1.cs
+├── HotelOccupancy.sln
+├── README.md
+├── docker-compose.yml
+├── folder_structure.txt
+└── global.json
+
+21 directories, 58 files

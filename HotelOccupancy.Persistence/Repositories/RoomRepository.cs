@@ -1,5 +1,7 @@
 using HotelOccupancy.Application;
+using HotelOccupancy.Application.Common;
 using HotelOccupancy.Domain.Models;
+using HotelOccupancy.Domain.Models.Errors;
 using HotelOccupancy.Persistence.Data;
 using HotelOccupancy.Persistence.Mappers;
 using Microsoft.EntityFrameworkCore;
@@ -15,29 +17,62 @@ public class RoomRepository : IRoomRepository
         _context = context;
     }
     
-    public async Task<List<Room>> GetAllAsync(DateTime? date = null)
+    public async Task<Result<List<Room>>> GetAllAsync(DateTime? date = null)
     {
         var entities = await _context.Rooms
             .Include(r => r.AssignedTravellers)
+            .ThenInclude(t => t.TravelGroup)
             .ToListAsync();
 
-        var roomDomainModel = RoomEntityMapper.ToDomain;
-        var result = entities.Select(roomDomainModel).ToList();
-        return result;
+        var rooms = entities.Select(RoomEntityMapper.ToDomain).ToList();
+        return Result<List<Room>>.Success(rooms);
     }
 
-    public async Task<Room?> GetByIdAsync(Guid id)
+    public async Task<Result<Room>> GetByIdAsync(Guid id)
     {
         var entity = await _context.Rooms
             .Include(r => r.AssignedTravellers)
             .FirstOrDefaultAsync(r => r.Id == id);
 
-        return entity is null ? null : RoomEntityMapper.ToDomain(entity);
+        if (entity == null)
+            return Result<Room>.Failure(ErrorCodes.NotFound, ErrorMessages.NotFound);
+
+        return Result<Room>.Success(RoomEntityMapper.ToDomain(entity));
     }
 
-    public async Task AddAsync(Room room)
+    public async Task<Result<Room>> GetByCodeAsync(string code)
     {
-        var entity = RoomEntityMapper.ToEntity(room);
-        await _context.Rooms.AddAsync(entity);
+        var entity = await _context.Rooms
+            .Include(r => r.AssignedTravellers)
+            .FirstOrDefaultAsync(r => r.Code == code);
+
+        if (entity == null)
+        {
+            return Result<Room>.Failure(ErrorCodes.NotFound, ErrorMessages.NotFound);
+        }
+
+        return Result<Room>.Success(RoomEntityMapper.ToDomain(entity));
+    }
+
+    public async Task<Result<Room>> UpdateAsync(Room room)
+    {
+        var entity = await _context.Rooms
+            .Include(r => r.AssignedTravellers)
+            .FirstOrDefaultAsync(r => r.Id == room.Id);
+
+        if (entity == null)
+            return Result<Room>.Failure(ErrorCodes.NotFound, ErrorMessages.NotFound);
+
+        // Map the updated values
+        entity.Code = room.Code;
+        entity.BedCount = room.BedCount;
+        entity.AssignedTravellers = room.AssignedTravellers
+            .Select(t => TravellerEntityMapper.ToEntity(t))
+            .ToList();
+
+        _context.Rooms.Update(entity);
+        await _context.SaveChangesAsync();
+
+        return Result<Room>.Success(RoomEntityMapper.ToDomain(entity));
     }
 }
