@@ -25,6 +25,14 @@ public class RoomRepository : IRoomRepository
             .ThenInclude(t => t.TravelGroup)
             .ToListAsync();
 
+        if (date.HasValue)
+        {
+            var requestedDate = date.Value.Date;
+            entities = entities.Where(r => r.AssignedTravellers
+                    .Any(t => t.TravelGroup.ArrivalDate.Date == requestedDate))
+                .ToList();
+        }
+
         var rooms = entities.Select(RoomEntityMapper.ToDomain).ToList();
         return Result<List<Room>>.Success(rooms);
     }

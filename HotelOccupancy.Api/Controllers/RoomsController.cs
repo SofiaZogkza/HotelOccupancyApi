@@ -20,9 +20,18 @@ public class RoomsController : ControllerBase
     [HttpGet]
     [ProducesResponseType(typeof(List<RoomOccupancyResponse>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<IActionResult> GetAllRooms([FromQuery] DateTime? date = null)
+    public async Task<IActionResult> GetAllRooms([FromQuery] string? date = null)
     {
-        var result = await _roomService.GetAllRoomsAsync(date);
+        
+        DateTime? parsedDate = null;
+        if (!string.IsNullOrEmpty(date))
+        {
+            if (DateTime.TryParseExact(date, "yyyy-MM-dd", null, System.Globalization.DateTimeStyles.None, out var dt))
+                parsedDate = dt;
+        }
+
+        var result = await _roomService.GetAllRoomsAsync(parsedDate);
+        
         if (!result.IsSuccess)
             return BadRequest(new { result.ErrorCode, result.ErrorMessage });
 
@@ -32,9 +41,16 @@ public class RoomsController : ControllerBase
     [HttpGet("available")]
     [ProducesResponseType(typeof(List<RoomOccupancyResponse>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<IActionResult> GetAvailableRooms([FromQuery] DateTime? date = null)
+    public async Task<IActionResult> GetAvailableRooms([FromQuery] string? date = null)
     {
-        var result = await _roomService.GetAllRoomsAsync(date);
+        DateTime? parsedDate = null;
+        if (!string.IsNullOrEmpty(date))
+        {
+            if (DateTime.TryParseExact(date, "yyyy-MM-dd", null, System.Globalization.DateTimeStyles.None, out var dt))
+                parsedDate = dt;
+        }
+
+        var result = await _roomService.GetAllRoomsAsync(parsedDate);
         if (!result.IsSuccess)
             return BadRequest(new { result.ErrorCode, result.ErrorMessage });
 

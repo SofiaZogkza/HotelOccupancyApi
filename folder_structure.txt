@@ -1,9 +1,10 @@
 .
+├── Database
+│   └── init_data.sql
 ├── HotelOccupancy.Api
 │   ├── Contracts
 │   │   └── ErrorResponse.cs
 │   ├── Controllers
-│   │   ├── HotelsController.cs
 │   │   ├── RoomsController.cs
 │   │   ├── TravelGroupsController.cs
 │   │   └── TravellersController.cs
@@ -26,6 +27,7 @@
 │   ├── ITravellerRepository.cs
 │   ├── ITravellerService.cs
 │   ├── Mappers
+│   │   ├── DtoDomainMapper.cs
 │   │   └── ValidationMessages.cs
 │   ├── Services
 │   │   ├── HotelService.cs
@@ -33,12 +35,16 @@
 │   │   ├── TravelGroupService.cs
 │   │   └── TravellerService.cs
 │   └── Validators
+│       ├── RoomSearchRequestValidator.cs
+│       └── RoomsByTravelGroupRequestValidator.cs
 ├── HotelOccupancy.Domain.Models
 │   ├── DTOs
 │   │   ├── AssignTravellersToRoomRequest.cs
 │   │   ├── MoveTravellerRequest.cs
-│   │   ├── RoomCreateRequest.cs
-│   │   └── RoomOccupancyResponse.cs
+│   │   ├── RoomOccupancyResponse.cs
+│   │   ├── RoomSearchRequest.cs
+│   │   ├── RoomsByTravelGroupRequest.cs
+│   │   └── TravellersResponse.cs
 │   ├── Errors
 │   │   ├── ErrorCodes.cs
 │   │   └── ErrorMessages.cs
@@ -64,6 +70,10 @@
 │   ├── Migrations
 │   │   ├── 20251019000700_InitialCreated.Designer.cs
 │   │   ├── 20251019000700_InitialCreated.cs
+│   │   ├── 20251019160056_MakeRoomIdNullable.Designer.cs
+│   │   ├── 20251019160056_MakeRoomIdNullable.cs
+│   │   ├── 20251019175826_AddTravellerTravelGroupRelation.Designer.cs
+│   │   ├── 20251019175826_AddTravellerTravelGroupRelation.cs
 │   │   └── HotelOccupancyDbContextModelSnapshot.cs
 │   └── Repositories
 │       ├── RoomRepository.cs
@@ -78,4 +88,4 @@
 ├── folder_structure.txt
 └── global.json
 
-21 directories, 58 files
+22 directories, 67 files

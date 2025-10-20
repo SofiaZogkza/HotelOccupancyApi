@@ -1,0 +1,91 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" version="28.2.7">
+  <diagram name="Page-1" id="pSD_VWqhdtWk51dilkl0">
+    <mxGraphModel dx="1676" dy="2093" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="8EMunOmd2oX-kQxCaIX3-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8EMunOmd2oX-kQxCaIX3-2" target="8EMunOmd2oX-kQxCaIX3-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8EMunOmd2oX-kQxCaIX3-2" value="&lt;div&gt;Client API / Swagger&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="30" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8EMunOmd2oX-kQxCaIX3-29" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#60a917;strokeColor=#2D7600;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=0;" edge="1" parent="1" source="8EMunOmd2oX-kQxCaIX3-3" target="8EMunOmd2oX-kQxCaIX3-15">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="680" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8EMunOmd2oX-kQxCaIX3-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#60a917;strokeColor=#2D7600;" edge="1" parent="1" source="8EMunOmd2oX-kQxCaIX3-3" target="8EMunOmd2oX-kQxCaIX3-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8EMunOmd2oX-kQxCaIX3-3" value="HotelOccupancy.Api (Presentation Layer)  " style="swimlane;startSize=50;fillColor=#d5e8d4;gradientColor=#97d077;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="75" y="150" width="350" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="8EMunOmd2oX-kQxCaIX3-7" value="&lt;div style=&quot;font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; line-height: 18px; white-space: pre;&quot;&gt;&lt;div style=&quot;line-height: 18px;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(204, 204, 204), rgb(255, 255, 255));&quot;&gt;Controllers: Rooms, Travellers, TravelGroups &lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span&gt;&lt;font style=&quot;color: light-dark(rgb(204, 204, 204), rgb(255, 255, 255));&quot;&gt;Contracts: ErrorResponse.cs &lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span&gt;&lt;font style=&quot;color: light-dark(rgb(204, 204, 204), rgb(255, 255, 255));&quot;&gt; Startup (Program.cs, appsettings.json)&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span&gt;&lt;font style=&quot;color: light-dark(rgb(204, 204, 204), rgb(255, 255, 255));&quot;&gt; &lt;span style=&quot;color: rgb(103, 150, 230);&quot;&gt;-&lt;/span&gt; Handles incoming HTTP requests &lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span&gt;&lt;font style=&quot;color: light-dark(rgb(204, 204, 204), rgb(255, 255, 255));&quot;&gt; &lt;span style=&quot;color: rgb(103, 150, 230);&quot;&gt;-&lt;/span&gt; Validates input and maps it to DTOs &lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(204, 204, 204), rgb(255, 255, 255));&quot;&gt; &lt;span style=&quot;color: rgb(103, 150, 230);&quot;&gt;-&lt;/span&gt; Calls Application Services &lt;/font&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" vertex="1" parent="8EMunOmd2oX-kQxCaIX3-3">
+          <mxGeometry x="20" y="50" width="330" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="8EMunOmd2oX-kQxCaIX3-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fillColor=#e3c800;strokeColor=#B09500;" edge="1" parent="1" source="8EMunOmd2oX-kQxCaIX3-13" target="8EMunOmd2oX-kQxCaIX3-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8EMunOmd2oX-kQxCaIX3-13" value="HotelOccupancy.Application (Business Logic Layer)" style="swimlane;startSize=50;fillColor=#f0a30a;fontColor=#000000;strokeColor=#BD7000;" vertex="1" parent="1">
+          <mxGeometry x="710" y="520" width="350" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="8EMunOmd2oX-kQxCaIX3-14" value="&lt;div style=&quot;font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; line-height: 18px; white-space: pre;&quot;&gt;&lt;div style=&quot;line-height: 18px;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;line-height: 18px;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(204, 204, 204), rgb(255, 255, 255));&quot;&gt; Services: RoomService, TravellerService, &lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(204, 204, 204), rgb(255, 255, 255));&quot;&gt;           TravelGroupService&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(204, 204, 204), rgb(255, 255, 255));&quot;&gt; Interfaces: IRepository &amp;amp; IService contracts&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(204, 204, 204), rgb(255, 255, 255));&quot;&gt; Common: Result&amp;lt;T&amp;gt;, Validation, Mapping&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(204, 204, 204), rgb(255, 255, 255));&quot;&gt; - Implements business use-cases&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(204, 204, 204), rgb(255, 255, 255));&quot;&gt; - Enforces rules independent from database &lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(204, 204, 204), rgb(255, 255, 255));&quot;&gt;   or API  &lt;/font&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" vertex="1" parent="8EMunOmd2oX-kQxCaIX3-13">
+          <mxGeometry x="20" y="50" width="330" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="8EMunOmd2oX-kQxCaIX3-15" value="HotelOccupancy.Domain.Models (Domain Layer) &#xa;" style="swimlane;startSize=50;" vertex="1" parent="1">
+          <mxGeometry x="780" y="150" width="350" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="8EMunOmd2oX-kQxCaIX3-16" value="&lt;div style=&quot;font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; line-height: 18px; white-space: pre;&quot;&gt;&lt;div style=&quot;line-height: 18px;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;line-height: 18px;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;line-height: 18px;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(204, 204, 204), rgb(255, 255, 255));&quot;&gt; Models: Room, Traveller, TravelGroup&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(204, 204, 204), rgb(255, 255, 255));&quot;&gt; DTOs: Request &amp;amp; Response models&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(204, 204, 204), rgb(255, 255, 255));&quot;&gt; Errors: ErrorCodes, ErrorMessages&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(204, 204, 204), rgb(255, 255, 255));&quot;&gt; - Defines core concepts and business rules&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(204, 204, 204), rgb(255, 255, 255));&quot;&gt; - Contains pure C# classes, no dependencies  &lt;/font&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" vertex="1" parent="8EMunOmd2oX-kQxCaIX3-15">
+          <mxGeometry x="20" y="50" width="330" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="8EMunOmd2oX-kQxCaIX3-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;fillColor=#6a00ff;strokeColor=#3700CC;" edge="1" parent="1" source="8EMunOmd2oX-kQxCaIX3-17" target="8EMunOmd2oX-kQxCaIX3-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8EMunOmd2oX-kQxCaIX3-17" value="HotelOccupancy.Persistence (Data Access Layer)" style="swimlane;startSize=50;fillColor=#76608a;strokeColor=#432D57;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="75" y="530" width="350" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="8EMunOmd2oX-kQxCaIX3-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="8EMunOmd2oX-kQxCaIX3-17" source="8EMunOmd2oX-kQxCaIX3-18">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="10" y="125" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8EMunOmd2oX-kQxCaIX3-18" value="&lt;div style=&quot;font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; line-height: 18px; white-space: pre;&quot;&gt;&lt;div style=&quot;line-height: 18px;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;line-height: 18px;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;line-height: 18px;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;line-height: 18px;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;DbContext: HotelDbContext&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Entities + Mappers: Map Domain - Db models&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Repositories: RoomRepository, &lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;TravellerRepository, TravelGroupRepository&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;  - Responsible for persistence logic (EF Core)&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" vertex="1" parent="8EMunOmd2oX-kQxCaIX3-17">
+          <mxGeometry x="10" y="50" width="340" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="8EMunOmd2oX-kQxCaIX3-20" value="HotelOccupancy.Tests" style="swimlane;startSize=50;" vertex="1" parent="1">
+          <mxGeometry x="750" y="780" width="350" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="8EMunOmd2oX-kQxCaIX3-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="8EMunOmd2oX-kQxCaIX3-20" source="8EMunOmd2oX-kQxCaIX3-22">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="10" y="125" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8EMunOmd2oX-kQxCaIX3-22" value="&lt;div style=&quot;line-height: 18px;&quot;&gt;&lt;div style=&quot;line-height: 18px;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;line-height: 18px;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;line-height: 18px;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;line-height: 18px;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; line-height: 18px; white-space: pre;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(204, 204, 204), rgb(255, 255, 255));&quot;&gt;- RoomServiceTests &lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(204, 204, 204), rgb(255, 255, 255));&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;(Unit Tests - fake repositories)&lt;/font&gt;&lt;/div&gt;&lt;font style=&quot;color: light-dark(rgb(204, 204, 204), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(204, 204, 204), rgb(255, 255, 255));&quot;&gt;- RoomControllerTests &lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(204, 204, 204), rgb(255, 255, 255));&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;(API tests (end-to-end)&lt;/font&gt;&lt;/div&gt;&lt;font style=&quot;color: light-dark(rgb(204, 204, 204), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(204, 204, 204), rgb(255, 255, 255));&quot;&gt;- TravellerRepositoryTests &lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(204, 204, 204), rgb(255, 255, 255));&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;(Integration tests (Persistence)&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" vertex="1" parent="8EMunOmd2oX-kQxCaIX3-20">
+          <mxGeometry x="10" y="50" width="340" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="8EMunOmd2oX-kQxCaIX3-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;fillColor=#6a00ff;strokeColor=#3700CC;" edge="1" parent="1" source="8EMunOmd2oX-kQxCaIX3-18" target="8EMunOmd2oX-kQxCaIX3-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8EMunOmd2oX-kQxCaIX3-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#60a917;strokeColor=#2D7600;" edge="1" parent="1" source="8EMunOmd2oX-kQxCaIX3-7" target="8EMunOmd2oX-kQxCaIX3-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8EMunOmd2oX-kQxCaIX3-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#e51400;strokeColor=#B20000;curved=1;" edge="1" parent="1" source="8EMunOmd2oX-kQxCaIX3-40" target="8EMunOmd2oX-kQxCaIX3-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8EMunOmd2oX-kQxCaIX3-40" value="HotelOccupancy.Infrastructure (Infrastructure Layer) &#xa;" style="swimlane;startSize=50;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="385" width="350" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="8EMunOmd2oX-kQxCaIX3-41" value="&lt;div style=&quot;font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; line-height: 18px; white-space: pre;&quot;&gt;&lt;div style=&quot;line-height: 18px;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;line-height: 18px;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;line-height: 18px;&quot;&gt;&lt;div style=&quot;&quot;&gt;Logging&lt;br/&gt;Integrations with other services&lt;/div&gt;&lt;div style=&quot;&quot;&gt;Messages (email, sms, notifications)&lt;/div&gt;&lt;div style=&quot;&quot;&gt;Authentication/Authorization&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" vertex="1" parent="8EMunOmd2oX-kQxCaIX3-40">
+          <mxGeometry x="20" y="50" width="330" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="8EMunOmd2oX-kQxCaIX3-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.997;entryY=0.311;entryDx=0;entryDy=0;entryPerimeter=0;fillColor=#e51400;strokeColor=#B20000;curved=1;" edge="1" parent="1" source="8EMunOmd2oX-kQxCaIX3-40" target="8EMunOmd2oX-kQxCaIX3-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8EMunOmd2oX-kQxCaIX3-46" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;HotelOccupancy — Architectural Overview&lt;/h1&gt;&lt;p style=&quot;text-align: center;&quot;&gt;REST - HTTP Request&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="450" y="-10" width="520" height="120" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
